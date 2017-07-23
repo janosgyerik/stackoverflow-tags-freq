@@ -26,7 +26,7 @@ questionStream <- function(session) {
 
   lastSeenTs <- NULL
   newQuestions.prod <- reactive({
-    invalidateLater(5000, session)
+    invalidateLater(10000, session)
 
     questions <- stack_questions(
       site = "stackoverflow",
@@ -41,7 +41,7 @@ questionStream <- function(session) {
     questions
   })
 
-  newQuestions <- newQuestions.dev
+  newQuestions <- newQuestions.prod
 
   # Parses newLines() into data frame
   reactive({
