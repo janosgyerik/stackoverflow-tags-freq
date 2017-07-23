@@ -37,7 +37,7 @@ function(input, output, session) {
 
     valueBox(
       value = formatC(downloadRate, digits = 1, format = "f"),
-      subtitle = "Questions per minute",
+      subtitle = "Questions / min",
       icon = icon("bar-chart"),
       color = "aqua"
     )
