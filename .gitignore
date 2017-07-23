@@ -11,3 +11,6 @@
 
 # Fonts
 *.ttc
+
+# project specific
+/config.R

@@ -6,6 +6,10 @@ library(bubbles)
 library(plyr)
 library(stackr)
 
+# Set STACK_EXCHANGE_KEY in this file
+source('config.R')
+Sys.setenv(STACK_EXCHANGE_KEY = STACK_EXCHANGE_KEY)
+
 # dummy data for testing
 load('questions.dev.RData')
 
