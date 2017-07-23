@@ -30,7 +30,7 @@ questionStream <- function(session) {
 
   lastSeenTs <- NULL
   newQuestions.prod <- reactive({
-    invalidateLater(10000, session)
+    invalidateLater(6000, session)
 
     questions <- stack_questions(
       site = "stackoverflow",
