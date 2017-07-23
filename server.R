@@ -33,7 +33,13 @@ function(input, output, session) {
     # The downloadRate is the number of rows in pkgData since
     # either startTime or maxAgeSecs ago, whichever is later.
     elapsed <- as.numeric(Sys.time()) - startTime
-    downloadRate <- nrow(pkgData()) / min(maxAgeSecs, elapsed) * 60
+    downloadRate <- {
+      # TODO improve this
+      initialQuestionCount <- 30
+      # TODO improve this too...
+      if (elapsed <= maxAgeSecs + (nrow(pkgData()) + 0 - nrow(pkgData()))) (nrow(pkgData()) - 30) / elapsed * 60
+      else nrow(pkgData()) / maxAgeSecs * 60
+    }
 
     valueBox(
       value = formatC(downloadRate, digits = 1, format = "f"),
